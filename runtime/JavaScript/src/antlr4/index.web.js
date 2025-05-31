@@ -6,6 +6,7 @@ import { default as atn } from './atn/index.js';
 import { default as dfa } from './dfa/index.js';
 import { default as context } from './context/index.js';
 import { default as misc } from './misc/index.js';
+import { default as state } from './state/index.js';
 import { default as tree } from './tree/index.js';
 import { default as error } from './error/index.js';
 import { default as CharStreams } from './CharStreams.js';
@@ -36,6 +37,21 @@ import BailErrorStrategy from "./error/BailErrorStrategy.js";
 import DefaultErrorStrategy from "./error/DefaultErrorStrategy.js";
 import Interval from './misc/Interval.js';
 import IntervalSet from './misc/IntervalSet.js';
+import ATNState from './state/ATNState.js';
+import BasicBlockStartState from './state/BasicBlockStartState.js';
+import BasicState from './state/BasicState.js';
+import BlockEndState from './state/BlockEndState.js';
+import BlockStartState from './state/BlockStartState.js';
+import DecisionState from './state/DecisionState.js';
+import LoopEndState from './state/LoopEndState.js';
+import PlusBlockStartState from './state/PlusBlockStartState.js';
+import PlusLoopbackState from './state/PlusLoopbackState.js';
+import RuleStartState from './state/RuleStartState.js';
+import RuleStopState from './state/RuleStopState.js';
+import StarBlockStartState from './state/StarBlockStartState.js';
+import StarLoopbackState from './state/StarLoopbackState.js';
+import StarLoopEntryState from './state/StarLoopEntryState.js';
+import TokensStartState from './state/TokensStartState.js';
 import ParseTreeListener from "./tree/ParseTreeListener.js";
 import ParseTreeVisitor from "./tree/ParseTreeVisitor.js";
 import ParseTreeWalker from "./tree/ParseTreeWalker.js";
@@ -46,10 +62,11 @@ import TerminalNode from "./tree/TerminalNode.js"
 import arrayToString from "./utils/arrayToString.js"
 import TokenStreamRewriter from './TokenStreamRewriter.js';
 import InputMismatchException from "./error/InputMismatchException.js"
+import TokenStream from './TokenStream.js';
 
 export default {
-    atn, dfa, context, misc, tree, error, Token, CommonToken, CharStreams, CharStream, InputStream, CommonTokenStream, Lexer, Parser,
-    ParserRuleContext, Interval, IntervalSet, LL1Analyzer, Utils, TokenStreamRewriter
+    atn, dfa, context, misc, state, tree, error, Token, CommonToken, CharStreams, CharStream, InputStream, CommonTokenStream, Lexer, Parser,
+    ParserRuleContext, Interval, IntervalSet, LL1Analyzer, Utils, TokenStreamRewriter, TokenStream
 }
 
 export {
@@ -57,5 +74,8 @@ export {
     RuleNode, TerminalNode, ParseTreeWalker, RuleContext, ParserRuleContext, Interval, IntervalSet,
     PredictionMode, LL1Analyzer, ParseTreeListener, ParseTreeVisitor, ATN, ATNDeserializer, PredictionContextCache, LexerATNSimulator, ParserATNSimulator, DFA,
     RecognitionException, NoViableAltException, FailedPredicateException, ErrorListener, DiagnosticErrorListener, BailErrorStrategy, DefaultErrorStrategy,
-    arrayToString, TokenStreamRewriter, InputMismatchException
+    arrayToString, TokenStreamRewriter, InputMismatchException, TokenStream,
+    ATNState, BasicBlockStartState, BasicState, BlockEndState, BlockStartState, DecisionState, LoopEndState,
+    PlusBlockStartState, PlusLoopbackState, RuleStartState, RuleStopState, StarBlockStartState, StarLoopbackState,
+    StarLoopEntryState, TokensStartState
 }
